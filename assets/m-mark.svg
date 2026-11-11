@@ -1,0 +1,9 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="35.84" height="35.84" viewBox="0 0 35.84 35.84" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Mark">
+<path id="Terreno" d="M2.24 20.16L17.92 14.1888L33.6 23.1488L17.1712 34.3488L2.24 20.16Z" fill="#0E6E66" stroke-width="1.12" stroke-linejoin="round" stroke="#0E6E66"/>
+<path id="Surco 1" d="M7.16797 24.8256L23.1104 17.1392" stroke-width="0.933333" stroke-linecap="round" stroke="#D9E3E7"/>
+<path id="Surco 2" d="M12.096 29.5296L28.2624 20.0832" stroke-width="0.933333" stroke-linecap="round" stroke="#D9E3E7"/>
+<path id="Pin" d="M21.6512 23.1488C20.16 20.9088 16.4288 17.92 16.4288 12.6912C16.4288 9.7088 19.04 7.4688 21.6512 7.4688C24.2688 7.4688 26.88 9.7088 26.88 12.6912C26.88 17.92 23.1488 20.9088 21.6512 23.1488Z" fill="#52606A" stroke-width="0.746667" stroke-linejoin="round" stroke="#0E6E66"/>
+<circle id="Centro del pin" cx="21.6533" cy="12.6933" r="2.05333" fill="white"/>
+</g>
+</svg>
