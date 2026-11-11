@@ -1,6 +1,12 @@
 (() => {
   'use strict';
 
+  // "Ingresar a SGT" links: URL injected into config.js at deploy time.
+  const sgtUrl = (window.APP_CONFIG && window.APP_CONFIG.sgtUrl) || '';
+  if (sgtUrl && sgtUrl !== '__SGT_URL__') {
+    document.querySelectorAll('[data-sgt-link]').forEach((a) => { a.href = sgtUrl; });
+  }
+
   // Scale fixed-geometry illustrations down to fit their container.
   const fits = Array.from(document.querySelectorAll('.fit[data-fit-width]'));
   const applyFit = () => {

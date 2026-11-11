@@ -1,0 +1,47 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Inyectar configuración
+        env:
+          SGT_URL: ${{ vars.SGT_URL }}
+        run: |
+          python3 - <<'EOF'
+          import json, os, pathlib
+          p = pathlib.Path("config.js")
+          src = p.read_text(encoding="utf-8")
+          placeholder = '"__SGT_URL__"'
+          if placeholder not in src:
+              raise SystemExit("config.js no contiene el placeholder __SGT_URL__")
+          p.write_text(src.replace(placeholder, json.dumps(os.environ.get("SGT_URL", ""))), encoding="utf-8")
+          EOF
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
