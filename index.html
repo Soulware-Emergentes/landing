@@ -1,125 +1,134 @@
 <!doctype html>
-<html lang="es">
+<html lang="en-US">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SGT · Sistema de Gestión Territorial · DEPRO</title>
-  <meta name="description" content="Sistema de Gestión Territorial (SGT) de la Dirección Estratégica de Producción (DEPRO): registro y validación de terrenos, beneficiarios y fichas de evaluación para el seguimiento del POI y del PEI.">
+  <title>SGT · Territorial Management System · DEPRO</title>
+  <meta name="description" content="DEPRO's Territorial Management System (SGT): registration and approval of plots, beneficiaries and field sheets for monitoring the POI and PEI.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <a class="skip-link" href="#content" data-i18n="a11y.skip">Skip to content</a>
 
   <!-- Navegación flotante / glass -->
-  <header class="nav" aria-label="Navegación principal">
+  <header class="nav" data-i18n-attr="aria-label:nav.label" aria-label="Main navigation">
     <span class="nav__highlight" aria-hidden="true"></span>
-    <a class="nav__brand" href="#inicio" aria-label="SGT, ir al inicio">
+    <a class="nav__brand" href="#inicio" data-i18n-attr="aria-label:nav.home" aria-label="SGT, go to home">
       <img class="only-d" src="assets/mark-nav.svg" width="56" height="56" alt="">
       <img class="only-m" src="assets/m-mark.svg" width="35.84" height="35.84" alt="">
       <span class="nav__wordmark"><span class="only-m">DEPRO / </span>SGT</span>
     </a>
     <span class="nav__sep" aria-hidden="true"></span>
-    <span class="nav__org">DEPRO · Dirección Estratégica de Producción</span>
-    <nav class="nav__links" id="nav-links" aria-label="Secciones">
-      <a class="nav__link is-active" href="#inicio" data-section="inicio" style="--w:123px">Qué es SGT</a>
-      <a class="nav__link" href="#como-funciona" data-section="como-funciona" style="--w:145px">Procedimiento</a>
-      <a class="nav__link" href="#mejora" data-section="mejora" style="--w:124px">Qué cambia</a>
-      <a class="nav__link only-menu" href="#quienes-usan" data-section="quienes-usan">Usuarios</a>
+    <span class="nav__org" data-i18n="nav.org">DEPRO · Strategic Production Directorate</span>
+    <nav class="nav__links" id="nav-links" data-i18n-attr="aria-label:nav.sections" aria-label="Sections">
+      <a class="nav__link is-active" href="#inicio" data-section="inicio" style="--w:123px" data-i18n="nav.what">What is SGT</a>
+      <a class="nav__link" href="#como-funciona" data-section="como-funciona" style="--w:145px" data-i18n="nav.procedure">Procedure</a>
+      <a class="nav__link" href="#mejora" data-section="mejora" style="--w:124px" data-i18n="nav.changes">What changes</a>
+      <a class="nav__link only-menu" href="#quienes-usan" data-section="quienes-usan" data-i18n="nav.users">Users</a>
+      <div class="lang-switch lang-switch--menu only-menu" role="group" data-i18n-attr="aria-label:lang.group" aria-label="Language">
+        <button type="button" class="lang-switch__btn" data-lang-switch="en-US" lang="en" aria-pressed="true">EN</button>
+        <button type="button" class="lang-switch__btn" data-lang-switch="es-419" lang="es" aria-pressed="false">ES</button>
+      </div>
     </nav>
-    <a class="nav__cta" href="#" data-sgt-link aria-label="Ingresar a SGT">
+    <div class="lang-switch lang-switch--bar" role="group" data-i18n-attr="aria-label:lang.group" aria-label="Language">
+      <button type="button" class="lang-switch__btn" data-lang-switch="en-US" lang="en" aria-pressed="true">EN</button>
+      <button type="button" class="lang-switch__btn" data-lang-switch="es-419" lang="es" aria-pressed="false">ES</button>
+    </div>
+    <a class="nav__cta" href="#" data-sgt-link data-i18n-attr="aria-label:nav.signIn" aria-label="Sign in to SGT">
       <span class="nav__cta-label">
         <img src="assets/icon-lock.svg" width="16" height="16" alt="">
-        <span class="nav__cta-text">Ingresar a SGT</span>
+        <span class="nav__cta-text" data-i18n="nav.signIn">Sign in to SGT</span>
       </span>
       <img class="only-d" src="assets/icon-continuar.svg" width="24" height="24" alt="">
       <img class="only-m" src="assets/m-icon-continuar.svg" width="24" height="24" alt="">
     </a>
-    <button class="nav__menu" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú">
+    <button class="nav__menu" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
   </header>
 
-  <main>
+  <main id="content" tabindex="-1">
     <!-- Hero -->
-    <section class="hero" id="inicio">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
       <img class="hero__bg" src="assets/hero-bg.webp" alt="" aria-hidden="true">
       <div class="hero__veil" aria-hidden="true"></div>
       <div class="hero__scrim" aria-hidden="true"></div>
       <div class="hero__veil-top" aria-hidden="true"></div>
       <div class="hero__inner">
         <div class="hero__copy">
-          <p class="hero__eyebrow">DEPRO · SISTEMA DE GESTIÓN TERRITORIAL</p>
-          <h1 class="hero__title">DEPRO implementa el Sistema de Gestión Territorial (SGT)</h1>
-          <p class="hero__lead">El SGT registra en un solo sistema los terrenos, los beneficiarios y las fichas de evaluación. La información validada se usa en el seguimiento del Plan Operativo Institucional (POI) y del Plan Estratégico Institucional (PEI).</p>
+          <p class="hero__eyebrow" data-i18n="hero.eyebrow">DEPRO · TERRITORIAL MANAGEMENT SYSTEM</p>
+          <h1 class="hero__title" id="hero-title" data-i18n="hero.title">DEPRO implements the Territorial Management System (SGT)</h1>
+          <p class="hero__lead" data-i18n="hero.lead">SGT records plots, beneficiaries and field sheets in a single system. Approved information is used to monitor the Institutional Operating Plan (POI) and the Institutional Strategic Plan (PEI).</p>
           <a class="btn-primary" href="#como-funciona">
-            <span class="btn-primary__text">Ver procedimiento</span>
+            <span class="btn-primary__text" data-i18n="hero.cta">View procedure</span>
             <img src="assets/icon-arrow-down.svg" width="12" height="12" alt="">
           </a>
         </div>
 
         <img class="hero__parcela" src="assets/hero-parcela.svg" width="500" height="420" alt="">
 
-        <div class="flow-m only-m" role="img" aria-label="Flujo de la información: Terreno, Ficha, POI y PEI">
-          <p class="flow-m__title">Flujo de la información</p>
+        <div class="flow-m only-m" role="img" data-i18n-attr="aria-label:flow.aria" aria-label="Information flow: Plot, Field sheet, POI and PEI">
+          <p class="flow-m__title" data-i18n="flow.title">Information flow</p>
           <span class="flow-m__track" aria-hidden="true"></span>
           <span class="flow-m__dot" style="left:13.58%"></span>
           <span class="flow-m__dot" style="left:50%"></span>
           <span class="flow-m__dot" style="left:86.42%"></span>
-          <span class="flow-m__label" style="left:13.58%">Terreno</span>
-          <span class="flow-m__label" style="left:50%">Ficha</span>
-          <span class="flow-m__label" style="left:86.42%">POI y PEI</span>
+          <span class="flow-m__label" style="left:13.58%" data-i18n="flow.plot">Plot</span>
+          <span class="flow-m__label" style="left:50%" data-i18n="flow.sheet">Field sheet</span>
+          <span class="flow-m__label" style="left:86.42%" data-i18n="flow.plans">POI and PEI</span>
         </div>
 
         <div class="hero__card-wrap fit" data-fit-width="438">
-          <div class="glass-card" role="img" aria-label="Flujo de la información: Terreno, Ficha, POI y PEI">
-            <p class="glass-card__title">Flujo de la información</p>
+          <div class="glass-card" role="img" data-i18n-attr="aria-label:flow.aria" aria-label="Information flow: Plot, Field sheet, POI and PEI">
+            <p class="glass-card__title" data-i18n="flow.title">Information flow</p>
             <span class="glass-card__link" aria-hidden="true"></span>
             <img class="glass-card__pt" style="left:46px;top:85px" src="assets/graph-point.svg" width="16" height="16" alt="">
             <img class="glass-card__pt" style="left:202px;top:85px" src="assets/graph-point.svg" width="16" height="16" alt="">
             <img class="glass-card__pt" style="left:368px;top:86px" src="assets/graph-point-end.svg" width="16" height="16" alt="">
-            <span class="glass-card__label" style="left:23px;top:112px">Terreno</span>
-            <span class="glass-card__label" style="left:191px;top:113px">Ficha</span>
-            <span class="glass-card__label" style="left:345px;top:112px">POI y PEI</span>
+            <span class="glass-card__label glass-card__label--start" data-i18n="flow.plot">Plot</span>
+            <span class="glass-card__label glass-card__label--mid" data-i18n="flow.sheet">Field sheet</span>
+            <span class="glass-card__label glass-card__label--end" data-i18n="flow.plans">POI and PEI</span>
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- Cómo funciona -->
-    <section class="section how" id="como-funciona">
+    <!-- Procedimiento -->
+    <section class="section how" id="como-funciona" aria-labelledby="how-title">
       <div class="container">
-        <p class="eyebrow">PROCEDIMIENTO</p>
-        <h2 class="h2">Registro y validación de la información</h2>
-        <p class="intro how__intro">El agente de campo registra el terreno y la ficha de evaluación en momentos distintos. El SGT vincula ambos registros para su revisión por Gerencia General.</p>
+        <p class="eyebrow" data-i18n="how.eyebrow">PROCEDURE</p>
+        <h2 class="h2" id="how-title" data-i18n="how.title">Registration and approval of information</h2>
+        <p class="intro how__intro" data-i18n="how.intro">The field agent registers the plot and the field sheet at different times. SGT links both records for review by General Management.</p>
 
         <div class="how__grid">
           <div class="fit only-m" data-fit-width="346">
-            <div class="map-m" role="img" aria-label="Vista territorial con un terreno medido y su registro en borrador">
+            <div class="map-m" role="img" data-i18n-attr="aria-label:map.aria" aria-label="Territorial view with a measured plot and its draft record">
               <img class="map-m__photo" src="assets/map-photo.webp" alt="">
               <span class="abs map-m__bar"></span>
               <img class="abs" style="left:20px;top:19px" src="assets/m-icon-ubicacion.svg" width="18" height="18" alt="">
-              <span class="abs map-m__bar-title">Vista territorial</span>
+              <span class="abs map-m__bar-title" data-i18n="map.title">Territorial view</span>
               <img class="abs" style="left:6px;top:67px" src="assets/m-poligono-terreno.svg" width="184" height="151" alt="">
               <div class="abs map-m__card">
                 <img class="abs" style="left:12px;top:13px" src="assets/m-icon-archivo.svg" width="18" height="18" alt="">
-                <span class="abs map-m__card-title">Terreno</span>
+                <span class="abs map-m__card-title" data-i18n="map.cardTitleShort">Plot</span>
                 <span class="abs map-m__card-divider"></span>
-                <span class="abs map-m__card-label">Archivo de medición</span>
-                <span class="abs map-m__card-status">BORRADOR</span>
+                <span class="abs map-m__card-label" data-i18n="map.cardLabel">Measurement file</span>
+                <span class="abs map-m__card-status" data-i18n="map.status">DRAFT</span>
               </div>
             </div>
           </div>
           <div class="fit only-d" data-fit-width="672">
-            <div class="map-illu" role="img" aria-label="Vista territorial con un terreno medido y su registro de terreno en borrador">
+            <div class="map-illu" role="img" data-i18n-attr="aria-label:map.aria" aria-label="Territorial view with a measured plot and its draft record">
               <img class="map-illu__photo" src="assets/map-photo.webp" alt="">
               <img class="abs" style="left:37.93px;top:77.97px" src="assets/terreno-contorno.svg" width="317.166" height="306.519" alt="">
               <span class="map-illu__bar"></span>
               <img class="abs" style="left:37px;top:33px" src="assets/icon-ubicacion.svg" width="24" height="24" alt="">
-              <span class="abs map-illu__bar-title">Vista territorial</span>
-              <span class="abs map-illu__tag">SGT · Terrenos</span>
+              <span class="abs map-illu__bar-title" data-i18n="map.title">Territorial view</span>
+              <span class="abs map-illu__tag" data-i18n="map.tag">SGT · Plots</span>
               <img class="abs" style="left:34px;top:232px" src="assets/terreno-vertice.svg" width="12" height="12" alt="">
               <img class="abs" style="left:37px;top:194px" src="assets/terreno-vertice.svg" width="12" height="12" alt="">
               <img class="abs" style="left:176px;top:86px" src="assets/terreno-vertice.svg" width="12" height="12" alt="">
@@ -129,14 +138,14 @@
               <img class="abs" style="left:300px;top:245px" src="assets/terreno-vertice.svg" width="12" height="12" alt="">
               <img class="abs" style="left:280px;top:376px" src="assets/terreno-vertice.svg" width="12" height="12" alt="">
               <img class="abs" style="left:136px;top:309px" src="assets/terreno-vertice.svg" width="12" height="12" alt="">
-              <span class="abs map-illu__legend"><span class="map-illu__swatch"></span>Terreno medido</span>
+              <span class="abs map-illu__legend"><span class="map-illu__swatch"></span><span data-i18n="map.legend">Measured plot</span></span>
               <div class="abs record-card">
                 <span class="record-card__icon"><img src="assets/icon-archivo.svg" width="24" height="24" alt=""></span>
-                <span class="abs record-card__title">Registro de terreno</span>
+                <span class="abs record-card__title" data-i18n="map.cardTitle">Plot record</span>
                 <span class="abs record-card__divider"></span>
-                <span class="abs record-card__label">Archivo de medición</span>
-                <span class="abs record-card__status">BORRADOR</span>
-                <span class="abs record-card__desc">El agente acepta el terreno en la web al volver a la oficina.</span>
+                <span class="abs record-card__label" data-i18n="map.cardLabel">Measurement file</span>
+                <span class="abs record-card__status" data-i18n="map.status">DRAFT</span>
+                <span class="abs record-card__desc" data-i18n="map.cardDesc">The agent accepts the plot on the web after returning to the office.</span>
               </div>
             </div>
           </div>
@@ -146,118 +155,118 @@
               <div class="callout__head">
                 <span class="callout__num" aria-hidden="true">01</span>
                 <span class="callout__icon" style="--tint:rgba(14,110,102,.15)"><img src="assets/icon-step1.svg" width="16.6667" height="16.6667" alt=""></span>
-                <h3 class="callout__title"><span class="only-d">1. </span>Registro del terreno</h3>
+                <h3 class="callout__title"><span class="only-d">1. </span><span data-i18n="step1.title">Plot registration</span></h3>
               </div>
-              <p class="callout__body">El agente envía desde la aplicación móvil la medición de la estación total. Al regresar a la oficina, acepta el terreno en la versión web.</p>
+              <p class="callout__body" data-i18n="step1.body">From the mobile app, the agent sends the total station measurement. After returning to the office, the agent accepts the plot in the web version.</p>
             </li>
             <li class="callout">
               <div class="callout__head">
                 <span class="callout__num" aria-hidden="true">02</span>
                 <span class="callout__icon" style="--tint:rgba(82,96,106,.15)"><img src="assets/icon-step2.svg" width="15" height="16.6667" alt=""></span>
-                <h3 class="callout__title"><span class="only-d">2. </span>Carga de la ficha de evaluación</h3>
+                <h3 class="callout__title"><span class="only-d">2. </span><span data-i18n="step2.title">Field sheet upload</span></h3>
               </div>
-              <p class="callout__body">Tras la evaluación en campo, el agente escanea la ficha y la carga en PDF, vinculada al beneficiario y al terreno. La ficha queda pendiente de revisión.</p>
+              <p class="callout__body" data-i18n="step2.body">After the field evaluation, the agent scans the field sheet and uploads it as a PDF, linked to the beneficiary and the plot. The field sheet remains pending review.</p>
             </li>
             <li class="callout">
               <div class="callout__head">
                 <span class="callout__num" aria-hidden="true">03</span>
                 <span class="callout__icon" style="--tint:rgba(24,46,90,.15)"><img src="assets/icon-step3.svg" width="16.6667" height="15" alt=""></span>
-                <h3 class="callout__title"><span class="only-d">3. </span>Validación de la ficha</h3>
+                <h3 class="callout__title"><span class="only-d">3. </span><span data-i18n="step3.title">Field sheet approval</span></h3>
               </div>
-              <p class="callout__body">El asistente de Gerencia General contrasta los datos extraídos por IA con el PDF y valida la ficha. La información validada se incorpora a las actividades del POI y del PEI.</p>
+              <p class="callout__body" data-i18n="step3.body">The General Management assistant compares the AI-extracted data with the PDF and approves the field sheet. The approved information is added to the POI and PEI activities.</p>
             </li>
           </ol>
         </div>
       </div>
     </section>
 
-    <!-- La mejora para DEPRO -->
-    <section class="section improve" id="mejora">
+    <!-- Qué cambia -->
+    <section class="section improve" id="mejora" aria-labelledby="changes-title">
       <div class="container improve__grid">
         <div class="improve__copy">
-          <p class="eyebrow">QUÉ CAMBIA</p>
-          <h2 class="improve__title">Información vinculada y verificable</h2>
-          <p class="improve__intro">Cada ficha de evaluación queda asociada a su terreno y a su beneficiario, y su revisión queda registrada.</p>
+          <p class="eyebrow" data-i18n="changes.eyebrow">WHAT CHANGES</p>
+          <h2 class="improve__title" id="changes-title" data-i18n="changes.title">Linked and verifiable information</h2>
+          <p class="improve__intro" data-i18n="changes.intro">Each field sheet is linked to its plot and beneficiary, and its review is recorded.</p>
         </div>
         <ul class="feature-list">
           <li class="feature">
             <span class="feature__icon"><img src="assets/icon-link.svg" width="26" height="26" alt=""></span>
             <div class="feature__content">
-              <p class="feature__label">01 · VÍNCULO</p>
-              <h3 class="feature__title">Registros vinculados</h3>
-              <p class="feature__body">El PDF de la evaluación queda asociado al beneficiario y al terreno correspondientes.</p>
+              <p class="feature__label" data-i18n="f1.label">01 · LINK</p>
+              <h3 class="feature__title" data-i18n="f1.title">Linked records</h3>
+              <p class="feature__body" data-i18n="f1.body">The evaluation PDF is linked to the corresponding beneficiary and plot.</p>
             </div>
           </li>
           <li class="feature">
             <span class="feature__icon"><img src="assets/icon-file.svg" width="26" height="26" alt=""></span>
             <div class="feature__content">
-              <p class="feature__label">02 · REVISIÓN</p>
-              <h3 class="feature__title">Revisión contra el documento original</h3>
-              <p class="feature__body">Gerencia General compara los datos extraídos por IA con la copia digital de la ficha.</p>
+              <p class="feature__label" data-i18n="f2.label">02 · REVIEW</p>
+              <h3 class="feature__title" data-i18n="f2.title">Review against the original document</h3>
+              <p class="feature__body" data-i18n="f2.body">General Management compares the AI-extracted data with the digital copy of the field sheet.</p>
             </div>
           </li>
           <li class="feature">
             <span class="feature__icon"><img src="assets/icon-check.svg" width="26" height="26" alt=""></span>
             <div class="feature__content">
-              <p class="feature__label">03 · INTEGRIDAD</p>
-              <h3 class="feature__title">Integridad y registro de la validación</h3>
-              <p class="feature__body">El SGT verifica que el PDF no haya sido modificado y registra quién validó la ficha y en qué fecha.</p>
+              <p class="feature__label" data-i18n="f3.label">03 · INTEGRITY</p>
+              <h3 class="feature__title" data-i18n="f3.title">Integrity and approval record</h3>
+              <p class="feature__body" data-i18n="f3.body">SGT verifies that the PDF has not been modified and records who approved the field sheet and when.</p>
             </div>
           </li>
         </ul>
       </div>
     </section>
 
-    <!-- Quiénes lo utilizan -->
-    <section class="section users" id="quienes-usan">
+    <!-- Usuarios -->
+    <section class="section users" id="quienes-usan" aria-labelledby="users-title">
       <div class="container">
-        <p class="eyebrow">USUARIOS</p>
-        <h2 class="h2">Usuarios del SGT</h2>
-        <p class="intro users__intro">El SGT lo utilizan los agentes de campo y el asistente de Gerencia General.</p>
+        <p class="eyebrow" data-i18n="users.eyebrow">USERS</p>
+        <h2 class="h2" id="users-title" data-i18n="users.title">SGT users</h2>
+        <p class="intro users__intro" data-i18n="users.intro">SGT is used by field agents and the General Management assistant.</p>
 
-        <article class="role role--dark">
+        <article class="role role--dark" aria-labelledby="role1-title">
           <div class="role__media role__media--phone">
-            <img class="role__visual" src="assets/visual-movil-agente.webp" alt="Aplicación móvil SGT: el agente adjunta el archivo de la estación total">
+            <img class="role__visual" src="assets/visual-movil-agente.webp" data-i18n-attr="alt:role1.alt" alt="SGT mobile app: the agent attaches the total station file">
           </div>
           <div class="role__copy">
-            <p class="role__eyebrow">01 · AGENTE DE CAMPO</p>
-            <h3 class="role__title">Registro de terrenos y fichas</h3>
-            <p class="role__body">Envía la medición desde la aplicación móvil y acepta el terreno en la versión web al regresar a la oficina. También escanea y carga la ficha de evaluación en PDF, vinculada al beneficiario y al terreno.</p>
+            <p class="role__eyebrow" data-i18n="role1.eyebrow">01 · FIELD AGENT</p>
+            <h3 class="role__title" id="role1-title" data-i18n="role1.title">Plot and field sheet registration</h3>
+            <p class="role__body" data-i18n="role1.body">Sends the measurement from the mobile app and accepts the plot in the web version after returning to the office. Also scans and uploads the field sheet as a PDF, linked to the beneficiary and the plot.</p>
           </div>
         </article>
 
-        <article class="role role--light">
+        <article class="role role--light" aria-labelledby="role2-title">
           <div class="role__copy">
-            <p class="role__eyebrow">02 · ASISTENTE DE GERENCIA GENERAL</p>
-            <h3 class="role__title">Validación de fichas</h3>
-            <p class="role__body">Contrasta los datos extraídos por IA con el PDF escaneado y valida la ficha. La información validada se incorpora a las actividades del POI y del PEI.</p>
+            <p class="role__eyebrow" data-i18n="role2.eyebrow">02 · GENERAL MANAGEMENT ASSISTANT</p>
+            <h3 class="role__title" id="role2-title" data-i18n="role2.title">Field sheet approval</h3>
+            <p class="role__body" data-i18n="role2.body">Compares the AI-extracted data with the scanned PDF and approves the field sheet. The approved information is added to the POI and PEI activities.</p>
           </div>
           <div class="role__media role__media--web">
-            <img class="role__visual" src="assets/visual-web-gerencia.webp" alt="SGT web: gerencia valida una ficha comparando los datos detectados con el documento original">
+            <img class="role__visual" src="assets/visual-web-gerencia.webp" data-i18n-attr="alt:role2.alt" alt="SGT web: General Management approves a field sheet by comparing the detected data with the original document">
           </div>
         </article>
       </div>
     </section>
 
     <!-- Seguimiento institucional -->
-    <section class="section tracking" id="seguimiento">
+    <section class="section tracking" id="seguimiento" aria-labelledby="tracking-title">
       <div class="container">
-        <p class="tracking__eyebrow"><img class="only-m" src="assets/m-icon-seguimiento.svg" width="22" height="22" alt="">SEGUIMIENTO INSTITUCIONAL</p>
-        <h2 class="tracking__title">Uso de la información en el POI y el PEI</h2>
-        <p class="tracking__intro">Tras validar la ficha, DEPRO incorpora la información de la evaluación a las actividades que dan seguimiento al POI y al PEI.</p>
+        <p class="tracking__eyebrow"><img class="only-m" src="assets/m-icon-seguimiento.svg" width="22" height="22" alt=""><span data-i18n="tracking.eyebrow">INSTITUTIONAL MONITORING</span></p>
+        <h2 class="tracking__title" id="tracking-title" data-i18n="tracking.title">Use of information in the POI and PEI</h2>
+        <p class="tracking__intro" data-i18n="tracking.intro">After the field sheet is approved, DEPRO adds the evaluation information to the activities that monitor the POI and PEI.</p>
         <div class="plans">
           <div class="plan">
             <span class="plan__icon"><img src="assets/icon-actividades.svg" width="25" height="25" alt=""></span>
             <div class="plan__content">
-              <h3 class="plan__title">POI · Plan Operativo Institucional</h3>
-              <p class="plan__body">Las evaluaciones validadas se incorporan al seguimiento de las actividades operativas.</p>
+              <h3 class="plan__title" data-i18n="poi.title">POI · Institutional Operating Plan</h3>
+              <p class="plan__body" data-i18n="poi.body">Approved evaluations are added to the monitoring of operational activities.</p>
             </div>
           </div>
           <div class="plan">
             <span class="plan__icon"><img src="assets/icon-objetivos.svg" width="25" height="25" alt=""></span>
             <div class="plan__content">
-              <h3 class="plan__title">PEI · Plan Estratégico Institucional</h3>
-              <p class="plan__body">La información consolidada contribuye al seguimiento de los objetivos estratégicos.</p>
+              <h3 class="plan__title" data-i18n="pei.title">PEI · Institutional Strategic Plan</h3>
+              <p class="plan__body" data-i18n="pei.body">Consolidated information contributes to monitoring strategic objectives.</p>
             </div>
           </div>
         </div>
@@ -269,36 +278,37 @@
     <div class="container">
       <div class="footer__top">
         <div class="footer__about">
-          <a class="footer__logo" href="#inicio" aria-label="SGT, ir al inicio">
+          <a class="footer__logo" href="#inicio" data-i18n-attr="aria-label:nav.home" aria-label="SGT, go to home">
             <img src="assets/mark-footer.svg" width="56" height="56" alt="">
             <span>SGT</span>
           </a>
-          <p class="footer__desc">Sistema de Gestión Territorial de la Dirección Estratégica de Producción (DEPRO).</p>
+          <p class="footer__desc" data-i18n="footer.desc">Territorial Management System of the Strategic Production Directorate (DEPRO).</p>
         </div>
-        <nav class="footer__col" aria-label="Explorar">
-          <h2 class="footer__heading">Explorar</h2>
+        <nav class="footer__col" aria-labelledby="footer-explore">
+          <h2 class="footer__heading" id="footer-explore" data-i18n="footer.explore">Explore</h2>
           <ul>
-            <li><a href="#inicio">Qué es SGT</a></li>
-            <li><a href="#como-funciona">Procedimiento</a></li>
-            <li><a href="#mejora">Qué cambia</a></li>
-            <li><a href="#quienes-usan">Usuarios</a></li>
+            <li><a href="#inicio" data-i18n="nav.what">What is SGT</a></li>
+            <li><a href="#como-funciona" data-i18n="nav.procedure">Procedure</a></li>
+            <li><a href="#mejora" data-i18n="nav.changes">What changes</a></li>
+            <li><a href="#quienes-usan" data-i18n="nav.users">Users</a></li>
           </ul>
         </nav>
         <div class="footer__col">
-          <h2 class="footer__heading">USO INTERNO</h2>
+          <h2 class="footer__heading" data-i18n="footer.internal">INTERNAL USE</h2>
           <ul>
-            <li><a href="#" data-sgt-link>Ingresar a SGT</a></li>
+            <li><a href="#" data-sgt-link data-i18n="nav.signIn">Sign in to SGT</a></li>
           </ul>
         </div>
       </div>
       <div class="footer__bottom">
-        <p>DEPRO · SGT · Sistema de Gestión Territorial</p>
-        <p>Dirección Estratégica de Producción</p>
+        <p data-i18n="footer.bottomLeft">DEPRO · SGT · Territorial Management System</p>
+        <p data-i18n="footer.bottomRight">Strategic Production Directorate</p>
       </div>
     </div>
   </footer>
 
   <script src="config.js"></script>
+  <script src="i18n.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

@@ -1,7 +1,7 @@
 (() => {
   'use strict';
 
-  // "Ingresar a SGT" links: URL injected into config.js at deploy time.
+  // "Sign in to SGT" links: URL injected into config.js at deploy time.
   const sgtUrl = (window.APP_CONFIG && window.APP_CONFIG.sgtUrl) || '';
   if (sgtUrl && sgtUrl !== '__SGT_URL__') {
     document.querySelectorAll('[data-sgt-link]').forEach((a) => { a.href = sgtUrl; });
@@ -31,11 +31,17 @@
   const nav = document.querySelector('.nav');
   const menuBtn = document.querySelector('.nav__menu');
   if (nav && menuBtn) {
+    const t = (key, fallback) => (window.I18N ? window.I18N.t(key) : fallback);
+    const updateMenuLabel = () => {
+      const open = nav.classList.contains('is-open');
+      menuBtn.setAttribute('aria-label', open ? t('nav.menuClose', 'Close menu') : t('nav.menuOpen', 'Open menu'));
+    };
     const setOpen = (open) => {
       nav.classList.toggle('is-open', open);
       menuBtn.setAttribute('aria-expanded', String(open));
-      menuBtn.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      updateMenuLabel();
     };
+    document.addEventListener('i18n:change', updateMenuLabel);
     menuBtn.addEventListener('click', () => setOpen(!nav.classList.contains('is-open')));
     nav.querySelectorAll('.nav__link').forEach((a) => a.addEventListener('click', () => setOpen(false)));
     document.addEventListener('keydown', (e) => {
